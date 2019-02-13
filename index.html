@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso vue.js</title>
+</head>
+<body>
+	<div id="app">
+		<!-- 
+			- Vue no permite {{}} en los atributos
+			- Short hand de v-bind:href="url" = :href="url"
+		-->
+		<h1>{{ titulo | uppercase }}</h1>
+		<h2>{{ subtitulo | lowercase }}</h2>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script type="text/javascript">
+		let app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'EStas en Platzi',
+				subtitulo: 'Estas viendo el curso de vue.js'
+			},
+			filters: {
+				uppercase: function (str){
+					return str.toUpperCase()
+				},
+				lowercase: function (str){
+					return str.toLowerCase()
+				}
+			}
+		});
+	</script>
+</body>
+</html>
